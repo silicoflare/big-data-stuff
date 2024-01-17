@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 # Hadoop Installation Script by SilicoFlare
 # Credits: https://learnubuntu.com/install-hadoop/
 
