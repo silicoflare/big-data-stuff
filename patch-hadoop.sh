@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
 echo "Patching started..."
 /usr/local/hadoop/sbin/stop-all.sh
