@@ -115,6 +115,7 @@ echo "<?xml version=\"1.0\"?>
 
 hdfs namenode -format
 
+/usr/local/hadoop/sbin/stop-all.sh
 /usr/local/hadoop/sbin/start-dfs.sh
 /usr/local/hadoop/sbin/start-yarn.sh
 jps
