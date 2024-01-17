@@ -113,9 +113,11 @@ echo "<?xml version=\"1.0\"?>
    </property>
 </configuration>" > /usr/local/hadoop/etc/hadoop/yarn-site.xml
 
+/usr/local/hadoop/sbin/stop-all.sh
 hdfs namenode -format
 
-/usr/local/hadoop/sbin/stop-all.sh
+sudo apt install -y junit
+
 /usr/local/hadoop/sbin/start-dfs.sh
 /usr/local/hadoop/sbin/start-yarn.sh
 jps
