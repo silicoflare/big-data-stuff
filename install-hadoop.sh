@@ -17,7 +17,7 @@ java -version                                       # check java version
 # Configuring SSH
 sudo apt install openssh-server openssh-client -y
 ssh-keygen -N '' -f ~/.ssh/id_rsa
-cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+sudo cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 sudo chmod 640 ~/.ssh/authorized_keys
 
 
@@ -32,7 +32,7 @@ sudo chown -R $USER:$USER /usr/local/hadoop
 
 # config files
 echo "Adding configurations"
-echo "export HADOOP_HOME=/usr/local/hadoop
+sudo echo "export HADOOP_HOME=/usr/local/hadoop
 export HADOOP_INSTALL=\$HADOOP_HOME
 export HADOOP_MAPRED_HOME=\$HADOOP_HOME
 export HADOOP_COMMON_HOME=\$HADOOP_HOME
@@ -44,13 +44,13 @@ export HADOOP_OPTS=\"-Djava.library.path=\$HADOOP_HOME/lib/native\"" >> ~/.bashr
 
 source ~/.bashrc
 
-echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+sudo echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export HADOOP_CLASSPATH+=\" \$HADOOP_HOME/lib/*.jar\"" >> /usr/local/hadoop/etc/hadoop/hadoop-env.sh
 
 cd /usr/local/hadoop/lib
 sudo wget https://jcenter.bintray.com/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar
 
-echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+sudo echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <?xml-stylesheet type=\"text/xsl\" href=\"configuration.xsl\"?>
 <configuration>
     <property>
@@ -63,7 +63,7 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 sudo mkdir -p /home/hadoop/hdfs/{namenode,datanode}
 sudo chown -R $USER:$USER /home/hadoop/hdfs
 
-echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+sudo echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <?xml-stylesheet type=\"text/xsl\" href=\"configuration.xsl\"?>
 <configuration>
     <property>
@@ -82,7 +82,7 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
     </property>
 </configuration>" > /usr/local/hadoop/etc/hadoop/hdfs-site.xml
 
-echo "<?xml version=\"1.0\"?>
+sudo echo "<?xml version=\"1.0\"?>
 <?xml-stylesheet type=\"text/xsl\" href=\"configuration.xsl\"?>
 <configuration>
     <property>
@@ -105,7 +105,7 @@ echo "<?xml version=\"1.0\"?>
     </property>
 </configuration>" > /usr/local/hadoop/etc/hadoop/mapred-site.xml
 
-echo "<?xml version=\"1.0\"?>
+sudo echo "<?xml version=\"1.0\"?>
 <configuration>
     <property>
       <name>yarn.nodemanager.aux-services</name>
