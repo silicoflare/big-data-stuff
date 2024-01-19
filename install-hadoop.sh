@@ -116,7 +116,7 @@ sudo echo "<?xml version=\"1.0\"?>
 
 sudo service ssh restart
 /usr/local/hadoop/sbin/stop-all.sh
-hdfs namenode -format
+/usr/local/hadoop/bin/hdfs namenode -format
 
 /usr/local/hadoop/sbin/start-dfs.sh
 /usr/local/hadoop/sbin/start-yarn.sh
