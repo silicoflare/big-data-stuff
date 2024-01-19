@@ -11,6 +11,7 @@ echo "Installing Java..."
 sudo apt update -y                                  # update packages
 sudo apt remove -y --purge openjdk* default-jdk*    # removing other versions of java
 sudo apt install -y openjdk-8-jdk                   # installing jdk 8
+sudo apt install -y junit
 java -version                                       # check java version
 
 
@@ -113,10 +114,9 @@ sudo echo "<?xml version=\"1.0\"?>
    </property>
 </configuration>" > /usr/local/hadoop/etc/hadoop/yarn-site.xml
 
+sudo service ssh restart
 /usr/local/hadoop/sbin/stop-all.sh
 hdfs namenode -format
-
-sudo apt install -y junit
 
 /usr/local/hadoop/sbin/start-dfs.sh
 /usr/local/hadoop/sbin/start-yarn.sh
